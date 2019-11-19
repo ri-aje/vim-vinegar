@@ -28,8 +28,8 @@ endif
 unlet! s:netrw_up
 
 nnoremap <silent> <Plug>VinegarUp :call <SID>opendir('edit')<CR>
-if empty(maparg('-', 'n'))
-  nmap - <Plug>VinegarUp
+if empty(maparg('<BS>', 'n'))
+  nmap <BS> <Plug>VinegarUp
 endif
 
 nnoremap <silent> <Plug>VinegarTabUp :call <SID>opendir('tabedit')<CR>
@@ -99,7 +99,7 @@ endfunction
 
 function! s:setup_vinegar() abort
   if !exists('s:netrw_up')
-    let orig = maparg('-', 'n')
+    let orig = maparg('<BS>', 'n')
     if orig =~? '^<plug>'
       let s:netrw_up = 'execute "normal \'.substitute(orig, ' *$', '', '').'"'
     elseif orig =~# '^:'
