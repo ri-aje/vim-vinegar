@@ -99,7 +99,7 @@ endfunction
 
 function! s:setup_vinegar() abort
   if !exists('s:netrw_up')
-    let orig = maparg('<BS>', 'n')
+    let orig = maparg('-', 'n')
     if orig =~? '^<plug>'
       let s:netrw_up = 'execute "normal \'.substitute(orig, ' *$', '', '').'"'
     elseif orig =~# '^:'
