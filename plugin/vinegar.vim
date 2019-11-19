@@ -109,7 +109,7 @@ function! s:setup_vinegar() abort
       let s:netrw_up = ''
     endif
   endif
-  nmap <buffer> - <Plug>VinegarUp
+  nmap <buffer> <BS> <Plug>VinegarUp
   cnoremap <buffer><expr> <Plug><cfile> get(<SID>relatives('.'),0,"\022\006")
   if empty(maparg('<C-R><C-F>', 'c'))
     cmap <buffer> <C-R><C-F> <Plug><cfile>
