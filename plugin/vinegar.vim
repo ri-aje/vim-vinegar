@@ -28,8 +28,8 @@ endif
 unlet! s:netrw_up
 
 nnoremap <silent> <Plug>VinegarUp :call <SID>opendir('edit')<CR>
-if empty(maparg('<BS>', 'n'))
-  nmap <BS> <Plug>VinegarUp
+if empty(maparg('-', 'n'))
+  nmap - <Plug>VinegarUp
 endif
 
 nnoremap <silent> <Plug>VinegarTabUp :call <SID>opendir('tabedit')<CR>
@@ -109,7 +109,7 @@ function! s:setup_vinegar() abort
       let s:netrw_up = ''
     endif
   endif
-  nmap <buffer> <BS> <Plug>VinegarUp
+  nmap <buffer> - <Plug>VinegarUp
   cnoremap <buffer><expr> <Plug><cfile> get(<SID>relatives('.'),0,"\022\006")
   if empty(maparg('<C-R><C-F>', 'c'))
     cmap <buffer> <C-R><C-F> <Plug><cfile>
