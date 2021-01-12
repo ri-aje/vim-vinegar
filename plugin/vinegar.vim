@@ -28,8 +28,8 @@ endif
 unlet! s:netrw_up
 
 nnoremap <silent> <Plug>VinegarUp :call <SID>opendir('edit')<CR>
-if empty(maparg('-', 'n'))
-  nmap - <Plug>VinegarUp
+if empty(maparg('^', 'n'))
+  nmap ^ <Plug>VinegarUp
 endif
 
 nnoremap <silent> <Plug>VinegarTabUp :call <SID>opendir('tabedit')<CR>
